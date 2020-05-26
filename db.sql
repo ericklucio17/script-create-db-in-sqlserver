@@ -55,8 +55,8 @@ CREATE TABLE SchemaName.TableName (
 	DeleteUser INT                    NULL,
 	DeleteDate DATETIME               NULL,
 	Active     BIT                NOT NULL,
-	CONSTRAINT PK_TableName PRIMARY KEY (Id)
 	-- specify more columns here
+	CONSTRAINT PK_TableName PRIMARY KEY (Id)
 );
 GO
 
