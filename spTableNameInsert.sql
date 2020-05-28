@@ -18,9 +18,9 @@ GO
 -- Method 1
 -- Create the stored procedure in the specified schema
 CREATE PROCEDURE SchemaName.StoredProcedureName
-    @Param1 /*parameter name*/ int /*datatype_for_param1*/ = 0, /*default_value_for_param1*/
-    @Param2 /*parameter name*/ int /*datatype_for_param1*/ = 0, /*default_value_for_param2*/
-    @Param3 /*parameter name*/ int /*datatype_for_param1*/ = 0 /*default_value_for_param2*/
+    @Param1 /*parameter name*/ INT /*datatype_for_param1*/ = 0, /*default_value_for_param1*/
+    @Param2 /*parameter name*/ INT /*datatype_for_param1*/ = 0, /*default_value_for_param2*/
+    @Param3 /*parameter name*/ INT /*datatype_for_param1*/ = 0 /*default_value_for_param2*/
 -- add more stored procedure parameters here
 AS
     -- body of the stored procedure
