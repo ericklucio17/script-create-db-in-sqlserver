@@ -4,6 +4,9 @@
 -- Description:	Script "spTableNameGet"                   --
 -- ====================================================== --
 
+USE DatabaseName;
+GO
+
 -- Create a new stored procedure called 'StoredProcedureName' in schema 'SchemaName'
 -- Drop the stored procedure if it already exists
 IF EXISTS (
@@ -26,11 +29,11 @@ AS
            Column3,
            Column4
     FROM SchemaName.TableOrViewName
-    WHERE Active = 1 /* add search conditions here */
+    WHERE Active = 1; /* add search conditions here */
 GO
 
 -- Example to execute the stored procedure we just created
-EXECUTE SchemaName.StoredProcedureName 
+EXECUTE SchemaName.StoredProcedureName;
 GO
 
 -- Method 2
@@ -42,12 +45,12 @@ BEGIN
            Column3,
            Column4
     FROM SchemaName.TableOrViewName
-    WHERE Active = 1 
+    WHERE Active = 1;
 END 
 GO
 
 -- Example to execute the stored procedure we just created
-EXEC SchemaName.StoredProcedureName 
+EXEC SchemaName.StoredProcedureName;
 GO
 
 

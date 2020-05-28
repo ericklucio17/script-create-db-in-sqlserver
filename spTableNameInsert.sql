@@ -4,6 +4,9 @@
 -- Description:	Script "spTableNameInsert"                --
 -- ====================================================== --
 
+USE DatabaseName;
+GO
+
 -- Create a new stored procedure called 'StoredProcedureName' in schema 'SchemaName'
 -- Drop the stored procedure if it already exists
 IF EXISTS (
@@ -19,13 +22,13 @@ GO
 -- Create the stored procedure in the specified schema
 CREATE PROCEDURE SchemaName.StoredProcedureName
     @Param1 /*parameter name*/ INT /*datatype_for_param1*/ = 0, /*default_value_for_param1*/
-    @Param2 /*parameter name*/ INT /*datatype_for_param1*/ = 0, /*default_value_for_param2*/
-    @Param3 /*parameter name*/ INT /*datatype_for_param1*/ = 0 /*default_value_for_param2*/
+    @Param2 /*parameter name*/ INT /*datatype_for_param2*/ = 0, /*default_value_for_param2*/
+    @Param3 /*parameter name*/ INT /*datatype_for_param3*/ = 0 /*default_value_for_param3*/
 -- add more stored procedure parameters here
 AS
     -- body of the stored procedure
-    -- Insert rows into table 'TableName'
-    INSERT INTO TableName
+    -- Insert rows into table 'TableName' in schema 'SchemaName'
+    INSERT INTO SchemaName.TableName
     ( -- columns to insert data into
      [Column1], [Column2], [Column3]
     )
@@ -36,7 +39,7 @@ AS
 GO
 
 -- example to execute the stored procedure we just created
-EXECUTE SchemaName.StoredProcedureName 1 /*value_for_param1*/, 2 /*value_for_param2*/, 3 /*value_for_param3*/
+EXECUTE SchemaName.StoredProcedureName 1 /*value_for_param1*/, 2 /*value_for_param2*/, 3; /*value_for_param3*/
 GO
 
 -- Method 2
@@ -47,11 +50,11 @@ CREATE PROCEDURE SchemaName.StoredProcedureName (
 )
 AS 
 BEGIN 
-    INSERT INTO TableName (Column1, Column2, Column3)
+    INSERT INTO SchemaName.TableName (Column1, Column2, Column3)
     VALUES (@Param1, @Param2, @Param3);
 END 
 GO
 
 -- Example to execute the stored procedure we just created
-EXEC SchemaName.StoredProcedureName 1, 2, 3
+EXEC SchemaName.StoredProcedureName 1, 2, 3;
 GO

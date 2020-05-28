@@ -1,7 +1,7 @@
 -- ====================================================== --
 -- Author:		Erick Adrián Lucio Villegas               --
 -- Create date: 25/05/2020                                --
--- Description:	Script "example db"                       --
+-- Description:	Script "db"                               --
 -- ====================================================== --
 
 /*

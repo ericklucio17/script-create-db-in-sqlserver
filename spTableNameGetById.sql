@@ -4,6 +4,9 @@
 -- Description:	Script "spTableNameGetById"               --
 -- ====================================================== --
 
+USE DatabaseName;
+GO
+
 -- Create a new stored procedure called 'StoredProcedureName' in schema 'SchemaName'
 -- Drop the stored procedure if it already exists
 IF EXISTS (
@@ -18,7 +21,7 @@ GO
 -- Method 1
 -- Create the stored procedure in the specified schema
 CREATE PROCEDURE SchemaName.StoredProcedureName
-    @param1 /*parameter name*/ int /*datatype_for_param1*/ = 0 /*default_value_for_param1*/
+    @Id /*parameter name*/ INT /*datatype_for_id*/ = 0 /*default_value_for_id*/
 AS
     -- body of the stored procedure
     -- Select rows from a Table or View 'TableOrViewName' in schema 'SchemaName'
@@ -27,11 +30,11 @@ AS
            Column3,
            Column4
     FROM SchemaName.TableOrViewName
-    WHERE Active = 1 AND Id = @param1 /* add search conditions here */
+    WHERE Active = 1 AND Id = @Id; /* add search conditions here */
 GO
 
 -- example to execute the stored procedure we just created
-EXECUTE SchemaName.StoredProcedureName 1 /*value_for_param1*/
+EXECUTE SchemaName.StoredProcedureName 1; /*value_for_id*/
 GO
 
 -- Method 2
@@ -45,12 +48,12 @@ BEGIN
            Column3,
            Column4
     FROM SchemaName.TableOrViewName
-    WHERE Active = 1 AND Id = @Id
+    WHERE Active = 1 AND Id = @Id;
 END 
 GO
 
 -- Example to execute the stored procedure we just created
-EXEC SchemaName.StoredProcedureName 1
+EXEC SchemaName.StoredProcedureName 1;
 GO
 
 

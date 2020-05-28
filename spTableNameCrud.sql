@@ -15,7 +15,7 @@ SELECT *
 WHERE SPECIFIC_SCHEMA = N'SchemaName'
     AND SPECIFIC_NAME = N'StoredProcedureName'
 )
-DROP PROCEDURE SchemaName.StoredProcedureName
+DROP PROCEDURE SchemaName.StoredProcedureName;
 GO
 
 -- Method 1
@@ -51,7 +51,7 @@ AS
                Column2,
                Column3
 		FROM SchemaName.TableOrViewName
-		WHERE Active = 1 /* add search conditions here */
+		WHERE Active = 1; /* add search conditions here */
 	END
 	-- Update
 	ELSE IF @Option = 3
@@ -63,7 +63,7 @@ AS
 			Colum2 = @Param3
 			-- add more columns and values here
 		WHERE Active = 1 AND 
-		      Id = @Id /* add search conditions here */
+		      Id = @Id; /* add search conditions here */
 	END
 	-- Delete
 	ELSE IF @Option = 4
@@ -72,7 +72,7 @@ AS
 		UPDATE SchemaName.TableName
 		SET Active = 0
 			-- add more columns and values here
-		WHERE Id = @Id /* add search conditions here */
+		WHERE Id = @Id; /* add search conditions here */
 	END
 GO
 
@@ -104,7 +104,7 @@ BEGIN
                Column2,
                Column3
 		FROM SchemaName.TableOrViewName
-		WHERE Active = 1 
+		WHERE Active = 1;
 	END
 	-- Update
 	ELSE IF @Option = 3
@@ -114,20 +114,20 @@ BEGIN
 			Colum2 = @Param2,
 			Colum2 = @Param3
 		WHERE Active = 1 AND 
-		      Id = @Id 
+		      Id = @Id;
 	END
 	-- Delete
 	ELSE IF @Option = 4
 	BEGIN
 		UPDATE SchemaName.TableName
 		SET Active = 0
-		WHERE Id = @Id 
+		WHERE Id = @Id;
 	END
 END
 GO
 
 -- Example to execute the stored procedure we just created
-EXEC SchemaName.StoredProcedureName 1, 2, 3, 4, 5
+EXEC SchemaName.StoredProcedureName 1, 2, 3, 4, 5;
 GO
 
 
