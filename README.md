@@ -1,4 +1,4 @@
-# sqlserver-scripts-examples
+# sqlserver scripts examples
 
 Ejemplos de scripts para base de datos en SQL Server. 
 
