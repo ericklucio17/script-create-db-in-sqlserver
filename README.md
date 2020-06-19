@@ -1,9 +1,9 @@
 # sqlserver-scripts-examples
 
-_Ejemplos de scripts para base de datos en SQL Server._ 
+Ejemplos de scripts para base de datos en SQL Server. 
 
 ----
-## Coemnzamos 🚀
+## Comenzamos 🚀
 
 _Ejecutar los scripts en una instancia de la base de datos._
  
